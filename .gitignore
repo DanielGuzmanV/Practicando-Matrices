@@ -1,0 +1,10 @@
+bin
+obj
+Properties
+App.config
+Form1.cs
+Form1.Designer.cs
+Form1.resx
+forPracticeMatriz.csproj
+forPracticeMatriz.sln
+Program.cs
