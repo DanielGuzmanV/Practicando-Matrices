@@ -8,7 +8,7 @@ namespace forPracticeMatriz
 {
     class classMatriz
     {
-        // Propiedades 
+        // Atributos
         const int maxFila = 50;
         const int maxColum = 50;
         private int[,] matriz;
@@ -30,7 +30,7 @@ namespace forPracticeMatriz
             {
                 for(int col = 1; col <= this.colum; col++)
                 {
-                    matriz[fila, col] = rand.Next(min, max + 1);
+                    matriz[fil, col] = rand.Next(min, max + 1);
                 }
             }
         }
@@ -40,7 +40,7 @@ namespace forPracticeMatriz
             string sep = "";
             for(int fil = 1; fil <= this.fila; fil++)
             {
-                for(int col = 1; col <=this.colum; col++)
+                for(int col = 1; col <= this.colum; col++)
                 {
                     sep = sep + matriz[fil, col] + "\t";
                 }
@@ -138,5 +138,90 @@ namespace forPracticeMatriz
                 }
             }
         }
+
+        // Promedio de una matriz
+        public double proMediaMatriz()
+        {
+            double suma = 0;
+            double resultado;
+            for(int fil = 1; fil <= this.fila; fil++)
+            {
+                for(int col = 1; col <= this.colum; col++)
+                {
+                    suma = suma + matriz[fil, col];
+                }
+            }
+            resultado = suma / (this.fila * this.colum);
+            return resultado;
+        }
+
+        // verificar el numero maximo de una matriz
+        public int numberMax()
+        {
+            int max = matriz[1, 1];
+            for(int fil = 1; fil <= this.fila; fil++)
+            {
+                for(int col = 1; col <= this.colum; col++)
+                {
+                    if(matriz[fil, col] > max)
+                    {
+                        max = matriz[fil, col];
+                    }
+                }
+            }
+            return max;
+        }
+        // Misma funcion sin usar las primeras posiciones
+        public int numberMax2()
+        {
+            int maxi = 0;
+            for (int fil = 1; fil <= this.fila; fil++)
+            {
+                for (int col = 1; col <= this.colum; col++)
+                {
+                    if(matriz[fil,col] > maxi)
+                    {
+                        maxi = matriz[fil, col];
+                    }
+                }
+            }
+            return maxi;
+        }
+
+        // ??????????????????
+        public int numberMaxParam(int number)
+        {
+            for (int fil = 1; fil <= this.fila; fil++)
+            {
+                for (int col = 1; col <= this.colum; col++)
+                {
+                    if (matriz[fil, col] > number)
+                    {
+                        number = matriz[fil, col];
+                    }
+                }
+            }
+            return number;
+        }
+        // Verificamos numero maximo por parametros (funciona 50/50)
+        public bool numberMaxParam2(int number)
+        {
+            int max = 0; bool respuesta = false;
+            for(int fil = 1; fil <= this.fila; fil++)
+            {
+                for(int col = 1; col <= this.colum; col++)
+                {
+                    if(matriz[fil,col] < number)
+                    {
+                        respuesta = true;
+                        break;
+                    }
+                }
+            }
+            return respuesta;
+        }
+
+        // ????????????????//
+        
     }
 }
