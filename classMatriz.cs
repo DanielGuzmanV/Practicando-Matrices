@@ -139,6 +139,36 @@ namespace forPracticeMatriz
             }
         }
 
+        // cargar serie de matrices(????)
+        public void cargarserie7(int numFila, int numColum, int terIni, int number)
+        {
+            int idx = 0;
+            this.fila = numFila; this.colum = numColum;
+            for(int fil = 1; fil <= this.fila; fil++)
+            {
+                for(int col = this.colum; col >=1; col--)
+                {
+                    idx++;
+                    matriz[fil, col] = terIni + (idx - 1) * number;
+                }
+            }
+        }
+
+        // cargar serie de matrices(????)
+        public void cargarserie8(int numFila, int numColum, int terIni, int number)
+        {
+            int idx = 0;
+            this.fila = numFila; this.colum = numColum;
+            for (int fil = this.fila;fil >= 1 ; fil--)
+            {
+                for (int col = this.colum; col >= 1; col--)
+                {
+                    idx++;
+                    matriz[fil, col] = terIni + (idx - 1) * number;
+                }
+            }
+        }
+
         // Promedio de una matriz
         public double proMediaMatriz()
         {
