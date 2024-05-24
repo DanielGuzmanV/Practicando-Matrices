@@ -236,7 +236,7 @@ namespace forPracticeMatriz
         // Verificamos numero maximo por parametros (funciona 50/50)
         public bool numberMaxParam2(int number)
         {
-            int max = 0; bool respuesta = false;
+            bool respuesta = false;
             for(int fil = 1; fil <= this.fila; fil++)
             {
                 for(int col = 1; col <= this.colum; col++)
@@ -251,7 +251,48 @@ namespace forPracticeMatriz
             return respuesta;
         }
 
-        // ????????????????//
-        
+        // Verificar si todos los elementos de la matriz son iguales
+        public bool verificarIgual()
+        {
+            int refElem, fil, col = 1; bool answer = true;
+            refElem = matriz[this.fila, 1];
+
+            while((col <=this.colum) && (answer == true))
+            {
+                fil = this.fila;
+                while((fil>= 1) && (answer == true))
+                {
+                    if(!(matriz[fil, col] == refElem))
+                    {
+                        answer = false;
+                    }
+                    fil--;
+                }
+                col++;
+            }
+            return answer;
+        }
+
+        // Misma funcion que la anterior
+        public bool verificarIgual2()
+        {
+            int col = 1, fil, elemIgual = matriz[1, 1];
+            bool answer = true;
+            
+            while((col <= this.colum) && (answer == true))
+            {
+                fil = 1;
+                while((fil <= this.fila) && (answer == true))
+                {
+                    if(!(matriz[fil, col] == elemIgual))
+                    {
+                        answer = false;
+                    }
+                    fil++;
+                }
+                col++;
+            }
+            return answer;
+        }
     }
 }
